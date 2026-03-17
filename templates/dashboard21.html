@@ -1,0 +1,25 @@
+{% extends "base23.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-success">
+        <h4>Acesso Autorizado!</h4>
+        <p>Bem-vindo ao Dashboard, {{ session['username'] }}. Esta rota está protegida pelo decorador <code>@login_required</code>.</p>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h5>Perfil</h5>
+                <a href="/perfil" class="btn btn-outline-primary">Ver Perfil</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h5>Reservas</h5>
+                <a href="/minhas_reservas" class="btn btn-outline-primary">Gerir Reservas</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

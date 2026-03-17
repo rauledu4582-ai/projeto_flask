@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>{% block title %}Título{% endblock %}</title>
+ <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Início</a> |
+        <a href="/sobre">Sobre</a> |
+        <a href="/contactos">Contactos</a>
+    </nav>
+
+ {% block content %}
+
+ {% endblock %}
+
+ <footer>
+        <p>&copy; 2026 - Aula 14</p>
+    </footer>
+</body>
+</html>

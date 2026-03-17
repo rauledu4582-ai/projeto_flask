@@ -1,0 +1,15 @@
+{% extends "base19.html" %}
+
+{% block title %}Área Restrita{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card border-primary">
+        <div class="card-body">
+            <h1 class="card-title">Bem-vindo à Área Privada!</h1>
+            <p class="card-text">Olá <strong>{{ username }}</strong>, este conteúdo só é visível para utilizadores logados.</p>
+            <a href="/logout" class="btn btn-danger">Encerrar Sessão</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

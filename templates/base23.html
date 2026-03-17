@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema CRUD Aula 23{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .navbar-brand { font-weight: bold; color: #0dcaf0 !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">SISTEMA CRUD 23</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    {% if session.get('username') %}
+                        <a class="nav-link" href="/dashboard21">Dashboard</a>
+                        <a class="nav-link active" href="/users23">Gerir Utilizadores</a>
+                        <div class="vr mx-2 text-white d-none d-lg-block"></div>
+                        <span class="nav-link text-info"> {{ session['username'] }}</span>
+                        <a class="nav-link text-danger" href="/logout19">Sair</a>
+                        <a class="nav-link" href="/reservas">Reservas</a>
+                    {% else %}
+                        <a class="nav-link" href="/login20">Entrar</a>
+                        <a class="nav-link btn btn-outline-info btn-sm ms-2" href="/registar20">Criar Conta</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% if erro %}
+            <div class="alert alert-danger alert-dismissible fade show">
+                {{ erro }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endif %}
+
+        {% if request.args.get('msg') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle-fill"></i> {{ request.args.get('msg') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

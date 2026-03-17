@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Contacto Aula 16{% endblock %}
+
+{% block content %}
+    <h2>Desafio Aula 16: Formulário de Contacto</h2>
+    <form action="/resultado16" method="POST">
+        <p>
+            <label>Nome:</label><br>
+            <input type="text" name="nome">
+        </p>
+        <p>
+            <label>Email:</label><br>
+            <input type="email" name="email">
+        </p>
+        <p>
+            <label>Mensagem:</label><br>
+            <textarea name="mensagem"></textarea>
+        </p>
+        <button type="submit">Enviar via POST</button>
+    </form>
+{% endblock %}

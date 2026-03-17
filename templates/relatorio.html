@@ -1,0 +1,33 @@
+{% extends "base23.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h4>Relatório de Ocupação: {{ recurso.nome }}</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Utilizador</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in reservas %}
+                    <tr>
+                        <td>{{ r.data }}</td>
+                        <td>{{ r.hora }}</td>
+                        <td>{{ r.username }}</td>
+                        <td>{{ r.observacoes or '-' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/reservas" class="btn btn-secondary">Voltar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

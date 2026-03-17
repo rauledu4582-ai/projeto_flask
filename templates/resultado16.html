@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Resultado Aula 16{% endblock %}
+
+{% block content %}
+    <h2 style="color: green;">Dados Recebidos com Sucesso!</h2>
+    <p><strong>Nome:</strong> {{ nome }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Mensagem:</strong> {{ mensagem }}</p>
+    <hr>
+    <a href="/contacto16">Voltar ao formulário</a>
+{% endblock %}

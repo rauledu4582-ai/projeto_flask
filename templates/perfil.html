@@ -1,0 +1,17 @@
+#Aula 13
+
+<h1>Perfil de {{ nome }}</h1>
+<p>Idade: {{ idade }}</p>
+
+{% if idade >= 18 %}
+    <p>Maior de idade</p>
+{% else %}
+    <p>Menor de idade</p>
+{% endif %}
+
+<h3>Hobbies:</h3>
+<ul>
+    {% for h in hobbies %}
+        <li>{{ h }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Meu Site</a>
+    <div class="navbar-nav">
+      {% if session.get('user') %}
+        <span class="nav-link text-info">Olá, {{ session['user'] }}</span>
+        <a class="nav-item nav-link" href="/logout">Sair</a>
+      {% else %}
+        <a class="nav-item nav-link" href="/login">Entrar</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>

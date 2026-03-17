@@ -1,0 +1,35 @@
+{% extends "base23.html" %}
+
+{% block title %}Área Privada - Sistema Seguro{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Painel do Utilizador</h3>
+                </div>
+                <div class="card-body">
+                    <h1>Bem-vindo, <span class="text-primary">{{ username }}</span>!</h1>
+                    <p class="lead">Esta é a tua área privada segura, protegida por autenticação e hashing de password.</p>
+                    
+                    <div class="alert alert-info mt-4">
+                        <h5>Resumo da Aula 20:</h5>
+                        <ul>
+                            <li><strong>Base de Dados:</strong> Utilizador validado via SQLite.</li>
+                            <li><strong>Segurança:</strong> A tua password está guardada como um <em>hash</em> irreversível.</li>
+                            <li><strong>Sessão:</strong> O teu acesso é mantido por um cookie seguro no browser.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="/" class="btn btn-secondary">Voltar ao Início</a>
+                        <a href="/logout" class="btn btn-danger">Encerrar Sessão (Logout)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

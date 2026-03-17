@@ -1,0 +1,10 @@
+{% extends "base18.html" %}
+{% block title %}Perfil{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Bem-vindo, {{ nome }}!</h1>
+    <p>Estás logado com sucesso usando sessões do Flask.</p>
+    <a href="/logout" class="btn btn-danger">Sair / Logout</a>
+</div>
+{% endblock %}

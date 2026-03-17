@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Título{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Início</a> |
+        <a href="/sobre">Sobre</a> |
+        <a href="/contactos">Contactos</a>
+    </nav>
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+    <footer>
+        <p>&copy; 2026 - Aula 15</p>
+    </footer>
+</body>
+</html>

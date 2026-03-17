@@ -1,0 +1,35 @@
+{% extends "base23.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Nova Reserva</h2>
+
+    {% if erro %}
+        <div class="alert alert-danger">{{ erro }}</div>
+    {% endif %}
+
+    <form method="POST" class="card p-4 shadow-sm">
+       <div class="mb-3">
+    <label>Selecione o Recurso:</label>
+    <select name="recurso_id" class="form-select" required>
+        <option value="">-- Escolha um recurso --</option>
+        {% for rec in recursos %}
+            <option value="{{ rec.id }}">{{ rec.nome }}</option>
+        {% endfor %}
+    </select>
+</div>
+        <div class="mb-3">
+            <label>Data</label>
+            <input type="date" name="data" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Hora</label>
+            <input type="time" name="hora" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Observações</label>
+            <textarea name="observacoes" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Confirmar Reserva</button>
+    </form>
+</div>
+{% endblock %}

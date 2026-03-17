@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Sistema Seguro</a>
+    <div class="navbar-nav ms-auto">
+      {% if session.get('username') %}
+        <span class="nav-item nav-link text-info">Olá, {{ session['username'] }}</span>
+        
+        <a class="nav-item nav-link" href="/area_privada20">Área Privada</a>
+
+        <a class="nav-item nav-link" href="/dashboard21">Dashboard</a>
+        <a class="nav-link" href="/perfil21">Meu Perfil</a>
+        <a class="nav-link" href="/minhas_reservas21">Reservas</a>
+        <a class="nav-link" href="/users22">Lista de Users</a>
+
+        <a class="nav-item nav-link text-danger" href="/logout19">Sair</a>
+        
+      {% else %}
+        <a class="nav-item nav-link" href="/login20">Entrar</a>
+        <a class="nav-item nav-link" href="/registar20">Registar</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>

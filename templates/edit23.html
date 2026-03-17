@@ -1,0 +1,25 @@
+{% extends "base23.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow col-md-6 mx-auto">
+        <div class="card-header bg-warning text-dark">
+            <h4>Editar Utilizador: {{ user['username'] }}</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Nome de Utilizador</label>
+                    <input type="text" name="username" class="form-control" value="{{ user['username'] }}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" name="email" class="form-control" value="{{ user['email'] }}" required>
+                </div>
+                <button type="submit" class="btn btn-success">Guardar Alterações</button>
+                <a href="/users22" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

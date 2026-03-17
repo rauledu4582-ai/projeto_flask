@@ -1,0 +1,34 @@
+{% extends "base23.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Lista de Utilizadores</h2>
+        <a href="/registar20" class="btn btn-success">+ Novo</a>
+    </div>
+
+    <table class="table table-white table-hover shadow-sm rounded">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in users %}
+            <tr>
+                <td>{{ u['id'] }}</td>
+                <td>{{ u['username'] }}</td>
+                <td>{{ u['email'] }}</td>
+                <td>
+                    <a href="/edit23/{{ u['id'] }}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="/delete23/{{ u['id'] }}" class="btn btn-danger btn-sm" onclick="return confirm('Apagar {{ u.username }}?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

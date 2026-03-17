@@ -1,0 +1,15 @@
+{% extends "base18.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Login do Sistema</h2>
+    <form action="/login" method="POST" class="col-md-4">
+        <div class="mb-3">
+            <label class="form-label">Nome de Utilizador:</label>
+            <input type="text" name="utilizador" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+</div>
+{% endblock %}
